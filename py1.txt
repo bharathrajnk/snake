@@ -1,0 +1,741 @@
+1. Write python program to print Hello World 
+PROGRAM: 
+print("Hello World") 
+OUTPUT: Hello World
+2. Write python program to perform String Concatenation
+PROGRAM:
+s1 = “Hello”
+s2 = “Good Morning!”
+s3 = s1 + “ ” + s2
+print(s3)
+OUTPUT:
+Hello Good Morning!
+3. Write python program to perform String repetition
+PROGRAM:
+numbers = [1] * 5
+print(numbers)
+OUTPUT: [1, 1, 1, 1, 1]
+PROGRAM:
+n = [0, 1, 2] * 3
+print(n)
+OUTPUT: [0, 1, 2, 0, 1, 2, 0, 1, 2]
+4. Write python program to perform String operations and observe the result.
+Python Lab /21CSL46
+Dept. of AD, C.I.T, Gubbi Page 8
+subj=“Computer”
+subj[0]
+subj[0:3]
+subj[:4]
+subj[:]
+5. Create a list and perform the following operations
+list1 = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+list2= [123, 'john']
+Print(list1) # Prints complete list
+print (list1[0] ) # Prints first element of the list
+print (list1[1:3]) # Prints elements starting from 2nd till 3rd 
+print (list1[2:] ) # Prints elements starting from 3rd element
+print (list2 * 2) # Prints list two times
+print (list1 + list2) # Prints concatenated lists
+list1[0]=7634 # Prints the new value 7634 in place of ‘abcd’ 
+OUTPUT:
+['abcd', 786, 2.23, 'john', 70.2]
+abcd
+[786, 2.23]
+[2.23, 'john', 70.2]
+[123, 'john', 123, 'john']
+['abcd', 786, 2.23, 'john', 70.2, 123, 'john']
+[7634, 786, 2.23, 'john', 70.2]
+6. Create a list and perform the following methods 
+i) append() ii) remove() iii) insert() iv) pop() v) extend()
+fruits = ['apple', 'banana', 'orange']
+ fruits.append('kiwi')
+Output: ['apple', 'banana', 'orange', 'kiwi']
+ fruits.append('apple')
+ Output: ['apple', 'banana', 'orange', 'kiwi', 'apple']
+ fruits.remove('apple')
+Python Lab /21CSL46
+Dept. of AD, C.I.T, Gubbi Page 9
+Output: ['banana', 'orange', 'kiwi', 'apple']
+fruits.insert(2,'strawberry')
+Output: ['banana', 'orange', 'strawberry', 'kiwi', 'apple']
+fruits.pop()
+Output: 'apple’
+fruits.pop(2)
+Output: 'strawberry‘
+print(fruits)
+Output: ['banana', 'orange', 'kiwi']
+fruits = ['banana', 'orange', 'kiwi']
+fruits.extend(['apple', 'strawberry'])
+Output: ['banana', 'orange', 'kiwi', 'apple', 'strawberry']
+7. Create a tuple and perform the following methods 
+1)Access items 2) len() 3) check for item in tuple 4)Add item
+PROGRAM:
+tup=(1,2,3,4,5,'a','bb','c','xyz') 
+print("Items in a tuple") 
+for i in tup: 
+ print(i,end=" ")
+print("\nLength of tuple",len(tup))
+i=int(input("enter a value")) 
+print(i in tup) 
+tup[1]="hello" print(tup)
+OUTPUT:
+Items in a tuple 
+1 2 3 4 5 a bb c xyz 
+Length of tuple 9 
+enter a value4 
+True 
+Python Lab /21CSL46
+Dept. of AD, C.I.T, Gubbi Page 10
+Traceback (most recent call last): 
+File "C:/Users/hi/tup1.py", line 8, in <module>
+tup[1]="hello" 
+TypeError: 'tuple' object does not support item assignment
+8. Write a Program to find largest of a number
+ PROGRAM:
+a = 50
+b = 55
+c = 58
+if a == b == c:
+ print('They are equal' )
+elif a > b and a > c:
+ print('a is largest' )
+elif b > a and b > c :
+ print('b is largest' )
+else:
+ print('c is largest')
+OUTPUT:
+c is largest
+9. Write a Function to add two numbers and observe the output.
+def add(a=5, b=10):
+ return a+b
+add(20,30)
+ def add(a=5, b=10):
+ return a+b
+add(20) # 20 will be going to a
+def add(a=5, b=10):
+ return a+b
+add(b=40) # b value will replaced
+Python Lab /21CSL46
+Dept. of AD, C.I.T, Gubbi Page 11
+PROGRAM :1
+1. a. Write a python program to find the best of two test average marks out 
+ of three test’s marks accepted from the user.
+ Aim: Introduce the Python fundamentals, data types, operators, flow control and exception handling in Python
+PROGRAM : 1A
+test1 = int(input("Enter marks of Test 1: "))
+test2 = int(input("Enter marks of Test 2: "))
+test3 = int(input("Enter marks of Test 3: "))
+Worst_score = min(test1, test2, test3)
+best_average = (test1 + test2 + test3 - Worst_score) / 2 
+print("Best average of two tests: ", best_average)
+OUTPUT:
+Python Lab /21CSL46
+Dept. of AD, C.I.T, Gubbi Page 12
+1. b. Develop a Python program to check whether a given number is palindrome 
+or not and also count the number of occurrences of each digit in the input 
+number.
+ Aim: Introduce the Python fundamentals, data types, operators, flow control and exception handling in Python
+PROGRAM : 1B
+num = int(input("Enter number:"))
+temp=num
+rev=0
+while(num>0):
+ dig = num % 10
+ rev = rev*10 + dig
+ num = num//10
+if(temp==rev):
+ print(f"The number {temp} is a palindrome!")
+else:
+ print(f"The number {temp} isn't a palindrome!")
+digit_counts = {}
+for digit in str(temp):
+ if digit in digit_counts:
+ digit_counts[digit] += 1
+ else:
+ digit_counts[digit] = 1
+print("Digit counts in", temp, ":")
+for digit, count in digit_counts.items():
+ print(digit, ":", count)
+OUTPUT:
+Python Lab /21CSL46
+Dept. of AD, C.I.T, Gubbi Page 13
+Note: Method 2
+num = input("Enter number:")
+temp=num
+rev = num[::-1]
+if(temp==rev):
+ print(f"The number {temp} is a palindrome!")
+else:
+ print(f"The number {temp} isn't a palindrome!")
+ 
+digit_counts = {} # empty dictionary
+for digit in temp:
+ if digit in digit_counts:
+ digit_counts[digit] += 1
+ else:
+ digit_counts[digit] = 1
+print("Digit counts in", temp, ":")
+for digit, count in digit_counts.items():
+ print(digit, ":", count)
+Python Lab /21CSL46
+Dept. of AD, C.I.T, Gubbi Page 14
+PROGRAM :2
+2. a Defined as a function F as Fn = Fn-1 + Fn-2. Write a Python program 
+which accepts a value for N (where N >0) as input and pass this value to the 
+function. Display suitable error message if the condition for input value is not 
+followed. 
+Aim: Demonstrating creation of functions, passing parameters and return values
+PROGRAM: 2A
+def Fibonacci(n):
+ if n<= 0:
+ print("Incorrect input, Please enter a positive integer")
+ # First Fibonacci number is 0
+ elif n == 1:
+ return 0
+ # Second Fibonacci number is 1
+ elif n == 2:
+ return 1
+ else:
+ return Fibonacci(n-1)+Fibonacci(n-2)
+n = int(input("Enter a positive integer: "))
+print(Fibonacci(n))
+OUTPUT: 2A
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 15
+Note: Method 2
+def fibonacci(n):
+ # first two terms
+ a, b = 0, 1
+ count = 0
+ # check if the number of terms is valid
+ if n <= 0:
+ print("Please enter a positive integer")
+ elif n == 1:
+ print("Fibonacci sequence upto",n,":")
+ print(a)
+ else:
+ print("Fibonacci sequence:")
+ while count < n:
+ print(a)
+ c = a + b
+ # update values of a and b
+ a = b
+ b = c
+ count += 1
+# take input from the user
+n = int(input("Enter the number of terms: "))
+fibonacci(n)
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 16
+2. b) Develop a python program to convert binary to decimal, octal to 
+hexadecimal using functions.
+PROGRAM: 2B (binary to decimal)
+def binaryToDecimal(binary):
+ decimal, i = 0, 0
+ while(binary != 0):
+ dec_rem = binary % 10
+ decimal = decimal + dec_rem * pow(2, i)
+ binary = binary//10
+ i += 1
+ print(f"binary number {bin} in decimal is: ", 
+decimal)
+bin = int(input("Enter the binary number for 
+conversion: "))
+binaryToDecimal(bin)
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 17
+PROGRAM: 2B (octal to hexadecimal)
+octal_number = input("Enter octal number")
+# convert octal to decimal
+decimal_number = 0
+power = len(str(octal_number)) - 1
+for digit in str(octal_number):
+ decimal_number += int(digit) * 8 ** power
+ power -= 1
+# convert decimal to hexadecimal
+hexadecimal_number=hex(decimal_number)[2:].upper()
+print(f"The hexadecimal equivalent of {octal_number} is {hexadecimal_number}"
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 18
+PROGRAM:3
+3. a. Write a Python program that accepts a sentence and find the number of 
+words, digits, uppercase letters and lowercase letters.
+Aim: Demonstration of manipulation of strings using string methods
+PROGRAM: 3A
+sentence = input("Enter a sentence: ")
+num_words = len(sentence.split())
+num_digits = 0
+num_uppercase = 0
+num_lowercase = 0
+for char in sentence:
+ if char.isdigit():
+ num_digits += 1
+ elif char.isupper():
+ num_uppercase += 1
+ elif char.islower():
+ num_lowercase += 1
+print("Number of words:", num_words)
+print("Number of digits:", num_digits)
+print("Number of uppercase letters:", num_uppercase)
+print("Number of lowercase letters:", num_lowercase)
+OUTPUT:3A
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 19
+3b. Write a Python program to find the string similarity between two given 
+strings. Sample Output: Original string: Python Exercises Python Exercises 
+Similarity between two said strings: 1.0 Sample Output: Original string: Python 
+Exercises Python Exercise Similarity between two said strings: 
+0.967741935483871
+PROGRAM: 3B
+from difflib import SequenceMatcher
+string1 = "Python Exercises"
+string2 = "Python Exercise"
+similarity = SequenceMatcher(None, string1, string2).ratio()
+print("Original string:")
+print(string1)
+print(string2)
+print("Similarity between two said strings:")
+print(similarity)
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 20
+PROGRAM:4
+4. a. Write a python program to implement insertion sort and merge sort using 
+lists
+Aim: Discuss different collections like list, tuple and dictionary
+PROGRAM: 4A (insertion sort)
+def insertion_sort(alist):
+ for i in range(1, len(alist)):
+ temp = alist[i]
+ j = i - 1
+ while (j >= 0 and temp < alist[j]):
+ alist[j + 1] = alist[j]
+ j = j - 1
+ alist[j + 1] = temp
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+insertion_sort(alist)
+print('Sorted list: ', end='')
+print(alist)
+OUTPUT: 4A (insertion sort)
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 21
+PROGRAM: 4A (merge sort)
+def merge_sort(arr):
+ if len(arr) > 1:
+ mid = len(arr) // 2
+ left_half = arr[:mid]
+ right_half = arr[mid:]
+ merge_sort(left_half)
+ merge_sort(right_half)
+ i = j = k = 0
+ while i < len(left_half) and j < len(right_half):
+ if left_half[i] < right_half[j]:
+ arr[k] = left_half[i]
+ i += 1
+ else:
+ arr[k] = right_half[j]
+ j += 1
+ k += 1
+ while i < len(left_half):
+ arr[k] = left_half[i]
+ i += 1
+ k += 1
+ while j < len(right_half):
+ arr[k] = right_half[j]
+ j += 1
+ k += 1
+ return arr
+num = int(input("how many elements you want in a list: "))
+arr = [int(input()) for x in range(num)]
+merge_sort(arr)
+print("sorted list is: ", arr)
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 22
+4. b. Write a program to convert roman numbers in to integer values using 
+dictionaries.
+PROGRAM: 4B
+def roman_to_int(roman_numeral):
+ roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+ result = 0
+ prev_value = 0
+ for i in range(len(roman_numeral)-1, -1, -1):
+ current_value = roman_dict[roman_numeral[i]]
+ if current_value < prev_value:
+ result -= current_value
+ else:
+ result += current_value
+ prev_value = current_value
+ return result
+print(roman_to_int('XXIV')) 
+print(roman_to_int('MMMCMLXXXVI'))
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 23
+PROGRAM: 5
+5. a. Write a function called isphonenumber() to recognize a pattern 415-555-
+4242 without using regular expression and also write the code to recognize the 
+same pattern using regular expression.
+Aim: Demonstration of pattern recognition with and without using regular expressions
+PROGRAM: 5A
+# How to recognize the pattern without using regular expressions:
+def isphonenumber(text):
+ if len(text) != 12:
+ return False
+ for i in range(0, 3):
+ if not text[i].isdecimal():
+ return False
+ if text[3] != '-':
+ return False
+ for i in range(4, 7):
+ if not text[i].isdecimal():
+ return False
+ if text[7] != '-':
+ return False
+ for i in range(8, 12):
+ if not text[i].isdecimal():
+ return False
+ return True
+# call function with a string argument to check if it matches the pattern of a phone number
+isphonenumber('415-555-4242')
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 24
+# How to recognize the pattern using regular expressions:
+import re
+number_pattern = re.compile(r'\d{3}-\d{3}-\d{4}')
+def isphonenumber(number):
+ if number_pattern.search(number):
+ return True
+ else:
+ return False
+ 
+isphonenumber('415-555-4242')
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 25
+ 5. b. Write Develop a python program that could search the text in a file for 
+ phone numbers (+919900889977) and email addresses (sample@gmail.com)
+PROGRAM:5B
+with open('filename.txt', 'r') as file:
+text = file.read()
+import re
+# Search for phone numbers using regular expressions
+phone_numbers = re.findall(r'\+91\d{10}', text)
+# Search for email addresses using regular expressions
+email_addresses = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|az]{2,}\b', text)
+# Print the results
+print("Phone numbers found:", phone_numbers)
+print("Email addresses found:", email_addresses)
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 26
+PROGRAM: 6
+6 a. Write a python program to accept a file name from the user and perform 
+the following operations
+1. Display the first N line of the file
+2. Find the frequency of occurrence of the word accepted from the user in the file
+PROGRAM:6A.1
+inputFile = "exampletextfile.txt" # input text file
+N = int(input("Enter N value: ")) # Enter N value
+with open(inputFile, 'r') as filedata: # Opening the given file in read-only mode
+ linesList= filedata.readlines() # Read the file lines using readlines()
+print("The following are the first",N,"lines of a text file:")
+for textline in (linesList[:N]): # Traverse in the list of lines to retrieve the first N lines of a file
+ print(textline, end ='') # Printing the first N lines of the file line by line.
+filedata.close() # Closing the input file
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 27
+PROGRAM:6A.2
+fname = input("Enter file name: ")
+word=input("Enter word to be searched:")
+k = 0
+with open(fname, 'r') as f:
+ for line in f:
+ words = line.split()
+ for i in words:
+ if(i==word):
+ k=k+1
+print(f"Occurrences of the word {word} is:" , k )
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 28
+6 b. Write a python program to create a ZIP file of a particular folder which 
+contains several files inside it.
+PROGRAM:6B
+import os
+from zipfile import ZipFile
+# Create object of ZipFile
+with ZipFile('E:/Zipped file.zip', 'w') as zip_object:
+ # Traverse all files in directory
+ for folder_name, sub_folders, file_names in os.walk('E:\CIT\DSD lab programs'):
+ for filename in file_names:
+ # Create filepath of files in directory
+ file_path = os.path.join(folder_name, filename)
+ # Add files to zip file
+ zip_object.write(file_path, os.path.basename(file_path))
+if os.path.exists('E:/Zipped file.zip'):
+ print("ZIP file created")
+else:
+ print("ZIP file not created")
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 29
+PROGRAM: 7
+7 a. By using the concept of inheritance write a python program to find the 
+area of triangle, circle and rectangle.
+PROGRAM: 7A
+class Shape:
+ def area(self):
+ pass
+class Triangle(Shape):
+ def __init__(self, base, height):
+ self.base = base
+ self.height = height
+ def area(self):
+ return 0.5 * self.base * self.height
+class Circle(Shape):
+ def __init__(self, radius):
+ self.radius = radius
+ def area(self):
+ return 3.14 * self.radius * self.radius
+class Rectangle(Shape):
+ def __init__(self, length, width):
+ self.length = length
+ self.width = width
+ def area(self):
+ return self.length * self.width
+# Example usage
+t = Triangle(10, 5)
+print("Area of triangle:", t.area())
+c = Circle(7)
+print("Area of circle:", c.area())
+r = Rectangle(8, 6)
+print("Area of rectangle:", r.area())
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 30
+7b. Write a python program by creating a class called Employee to store the 
+details of Name, Employee_ID, Department and Salary, and implement a 
+method to update salary of employees belonging to a given department.
+PROGRAM: 7B
+class Employee:
+ def __init__(self):
+ self.name = ""
+ self.employee_Id = ""
+ self.department = ""
+ self.salary = 0
+ 
+ def getEmpDetails(self):
+ self.name = input("Enter Employee name : ")
+ self.employee_Id = input("Enter Employee ID : ")
+ self.department = input("Enter Employee Dept : ")
+ self.salary = int(input("Enter Employee Salary : "))
+ 
+ def showEmpDetails(self):
+ print("Employee Details")
+ print("Name : ", self.name)
+ print("ID : ", self.employee_Id)
+ print("Dept : ", self.department)
+ print("Salary : ", self.salary)
+ 
+ def updtSalary(self):
+ self.salary = int(input("Enter new Salary : "))
+ print("Updated Salary", self.salary)
+ 
+e1 = Employee()
+e1.getEmpDetails()
+e1.showEmpDetails()
+e1.updtSalary()
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 31
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 32
+PROGRAM: 8
+8. Aim: Demonstration of classes and methods with polymorphism and overriding
+a) Write a python program to find the whether the given input is palindrome or 
+not (for both string and integer) using the concept of polymorphism and 
+inheritance.
+PROGRAM: 8
+class PaliStr:
+ def __init__(self):
+ self.isPali = False
+ 
+ def chkPalindrome(self, myStr):
+ if myStr == myStr[::-1]:
+ self.isPali = True
+ else:
+ self.isPali = False
+ 
+ return self.isPali
+ 
+class PaliInt(PaliStr):
+ def __init__(self):
+ self.isPali = False
+ 
+ def chkPalindrome(self, val):
+ temp = val
+ rev = 0
+ while temp != 0:
+ dig = temp % 10
+ rev = (rev*10) + dig
+ temp = temp //10
+ 
+ if val == rev:
+ self.isPali = True
+ else:
+ self.isPali = False
+ 
+ return self.isPali
+st = input("Enter a string : ")
+stObj = PaliStr()
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 33
+if stObj.chkPalindrome(st):
+ print("Given string is a Palindrome")
+else:
+ print("Given string is not a Palindrome")
+val = int(input("Enter a integer : ")) 
+intObj = PaliInt()
+if intObj.chkPalindrome(val):
+ print("Given integer is a Palindrome")
+else:
+ print("Given integer is not a Palindrome")
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 34
+PROGRAM: 9
+9. Aim: Demonstration of working with excel spreadsheets and web scraping
+a) Write a python program to download the all XKCD comics
+b) Demonstrate python program to read the data from the spreadsheet and 
+ write the data in to the spreadsheet
+PROGRAM: 9.A
+import requests
+import os
+from bs4 import BeautifulSoup
+# Set the URL of the first XKCD comic
+url = 'https://xkcd.com/1/'
+# Create a folder to store the comics
+if not os.path.exists('xkcd_comics'):
+ os.makedirs('xkcd_comics')
+# Loop through all the comics
+while True:
+ # Download the page content
+ res = requests.get(url)
+ res.raise_for_status()
+ # Parse the page content using BeautifulSoup
+ soup = BeautifulSoup(res.text, 'html.parser')
+ # Find the URL of the comic image
+ comic_elem = soup.select('#comic img')
+ if comic_elem == []:
+ print('Could not find comic image.')
+ else:
+ comic_url = 'https:' + comic_elem[0].get('src')
+ # Download the comic image
+ print(f'Downloading {comic_url}...')
+ res = requests.get(comic_url)
+ res.raise_for_status()
+ # Save the comic image to the xkcd_comics folder
+image_file = open(os.path.join('xkcd_comics', 
+os.path.basename(comic_url)), 'wb')
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 35
+ for chunk in res.iter_content(100000):
+ image_file.write(chunk)
+ image_file.close()
+ # Get the URL of the previous comic
+ prev_link = soup.select('a[rel="prev"]')[0]
+ if not prev_link:
+ break
+ url = 'https://xkcd.com' + prev_link.get('href')
+print('All comics downloaded.')
+OUTPUT:
+Few comics downloaded from above output
+ 
+ planetary_scientist.png
+ 
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 36
+PROGRAM: 9.B
+from openpyxl import Workbook 
+from openpyxl.styles import Font
+wb = Workbook() 
+sheet = wb.active
+sheet.title = "Language"
+wb.create_sheet(title = "Capital")
+lang = ["Kannada", "Telugu", "Tamil"]
+state = ["Karnataka", "Telangana", "Tamil Nadu"]
+capital = ["Bengaluru", "Hyderabad", "Chennai"]
+code =['KA', 'TS', 'TN']
+sheet.cell(row = 1, column = 1).value = "State"
+sheet.cell(row = 1, column = 2).value = "Language"
+sheet.cell(row = 1, column = 3).value = "Code"
+ft = Font(bold=True)
+for row in sheet["A1:C1"]:
+ for cell in row:
+ cell.font = ft
+ 
+for i in range(2,5):
+ sheet.cell(row = i, column = 1).value = state[i-2]
+ sheet.cell(row = i, column = 2).value = lang[i-2]
+ sheet.cell(row = i, column = 3).value = code[i-2]
+ 
+wb.save("demo.xlsx")
+sheet = wb["Capital"]
+sheet.cell(row = 1, column = 1).value = "State"
+sheet.cell(row = 1, column = 2).value = "Capital"
+sheet.cell(row = 1, column = 3).value = "Code"
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 37
+ft = Font(bold=True)
+for row in sheet["A1:C1"]:
+ for cell in row:
+ cell.font = ft
+for i in range(2,5):
+ sheet.cell(row = i, column = 1).value = state[i-2]
+ sheet.cell(row = i, column = 2).value = capital[i-2]
+ sheet.cell(row = i, column = 3).value = code[i-2]
+ 
+wb.save("demo.xlsx")
+srchCode = input("Enter state code for finding capital ")
+for i in range(2,5):
+ data = sheet.cell(row = i, column = 3).value
+ if data == srchCode:
+ print("Corresponding capital for code", srchCode, "is", sheet.cell(row = i, column = 
+2).value)
+ 
+sheet = wb["Language"]
+srchCode = input("Enter state code for finding language ")
+for i in range(2,5):
+ data = sheet.cell(row = i, column = 3).value
+ if data == srchCode:
+ print("Corresponding language for code", srchCode, "is", sheet.cell(row = i, column = 
+2).value)
+wb.close()
+OUTPUT:
+Python Programming Lab / 21CSL46 
+Dept of AD, CIT, GUBBI. Page 38
+PROGRAM: 10
+10.Aim: Demonstration of working with PDF, word and JSON files
+a) Write a python program to combine select pages from many PDFs
+b) Write a python program to fetch current weather data from the JSON file
+PROGRAM: 10.A
+from PyPDF2 import PdfWriter, PdfReader
+num = int(input("Enter page number you want combine from multiple documents "))
+pdf1 = open('10a1.pdf', 'rb')
+pdf2 = open('10a2.pdf', 'rb')
+pdf_writer = PdfWriter()
+pdf1_reader = PdfReader(pdf1) 
+page = pdf1_reader.pages[num - 1]
+pdf_writer.add_page(page)
+pdf2_reader = PdfReader(pdf2) 
+page = pdf2_reader.pages[num - 1]
+pdf_writer.add_page(page)
+with open('output.pdf', 'wb') as output:
+ pdf_writer.write(output)
